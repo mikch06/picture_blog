@@ -15,3 +15,6 @@ for pic in pics:
         # print (src.name, img)
         print("Picture Name: ", pic)
         print("Picture Date: ", img.get('datetime'))
+        print("----------------------------------")
+
+print("\n\nPicture Blog handle endup.")
