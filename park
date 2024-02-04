@@ -1,3 +1,0 @@
-        # Imagename
-        imageName = imageDate + '.jpg'
-        print(imageName)
