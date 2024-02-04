@@ -25,7 +25,9 @@ for pic in pics:
         imageDate = datetime.strftime(imageDate, dateFormat)
         print("Picture New Format: ", imageDate)
 
-
+        # Imagename
+        imageName = imageDate + '.jpg'
+        print(imageName)
 
 
 print("\n\nPicture Blog handle endup.")
