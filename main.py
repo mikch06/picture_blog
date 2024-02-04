@@ -1,11 +1,16 @@
 from exif import Image
 from pathlib import Path
-import time
+import os
 from datetime import datetime
 
 # Filepath
 source = 'pics'
 dest = 'web'
+home = os.path.join(dest, 'index.html')
+
+# Generate timestamp
+now = datetime.now()
+timestamp = now.strftime("%Y-%m-%d %H:%M")
 
 # Read pictures from source folder
 pics = Path(source).glob('*')
@@ -28,6 +33,10 @@ for pic in pics:
         # Imagename
         imageName = imageDate + '.jpg'
         print(imageName)
+
+        with open('pics.txt', 'a') as f:
+          f.write(imageName + '\n')
+
 
 
 print("\n\nPicture Blog handle endup.")
@@ -79,3 +88,28 @@ max-width: 50%;
 
 footer = "\n<body>\n</html>"
 
+homepage = """
+<h1>Weeeeeeein/h1>
+
+"""
+
+
+
+
+
+
+
+
+# Loop articles for page index
+with open(home, 'w') as f:
+    f.write(header)
+    f.write(homepage)
+    for pic in pics:
+        newpage = os.path.splitext(page)[0]
+        newpage = newpage.replace("-", " ")
+        print("title:", newpage)
+        f.write("<a href=\"{0}\">{1}</a><br>".format(page, newpage))
+    f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(timestamp))
+    f.write(footer)
+
+print("Fileconverter has finished")
