@@ -12,6 +12,11 @@ home = os.path.join(dest, 'index.html')
 now = datetime.now()
 timestamp = now.strftime("%Y-%m-%d %H:%M")
 
+homepage = """
+<h1>Weeeeeeein/h1>
+
+"""
+
 # Read pictures from source folder
 pics = Path(source).glob('*')
 
@@ -34,8 +39,9 @@ for pic in pics:
         imageName = imageDate + '.jpg'
         print(imageName)
 
-        with open('pics.txt', 'a') as f:
-          f.write(imageName + '\n')
+        with open(home, 'a') as f:
+            f.write(homepage)
+            f.write(imageName + '\n')
 
 
 
@@ -101,15 +107,15 @@ homepage = """
 
 
 # Loop articles for page index
-with open(home, 'w') as f:
-    f.write(header)
-    f.write(homepage)
-    for pic in pics:
-        newpage = os.path.splitext(page)[0]
-        newpage = newpage.replace("-", " ")
-        print("title:", newpage)
-        f.write("<a href=\"{0}\">{1}</a><br>".format(page, newpage))
-    f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(timestamp))
-    f.write(footer)
+# with open(home, 'w') as f:
+#     f.write(header)
+#     f.write(homepage)
+#     for pic in pics:
+#         newpage = os.path.splitext(page)[0]
+#         newpage = newpage.replace("-", " ")
+#         print("title:", newpage)
+#         f.write("<a href=\"{0}\">{1}</a><br>".format(page, newpage))
+#     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(timestamp))
+#     f.write(footer)
 
-print("Fileconverter has finished")
+# print("Fileconverter has finished")
