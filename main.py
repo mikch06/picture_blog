@@ -20,6 +20,10 @@ homepage = """
 # Read pictures from source folder
 pics = Path(source).glob('*')
 
+with open(home, 'a') as site:
+    site.write(homepage)
+
+
 for pic in pics:
     with open(pic, 'rb') as src:
         img = Image(src)
@@ -39,9 +43,7 @@ for pic in pics:
         imageName = imageDate + '.jpg'
         print(imageName)
 
-        with open(home, 'a') as f:
-            f.write(homepage)
-            f.write(imageName + '\n')
+        site.write(imageName + '\n')
 
 
 
