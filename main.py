@@ -4,54 +4,13 @@ import os
 from datetime import datetime
 
 # Filepath
-source = 'pics'
+source = 'web/images'
 dest = 'web'
 home = os.path.join(dest, 'index.html')
 
 # Generate timestamp
 now = datetime.now()
 timestamp = now.strftime("%Y-%m-%d %H:%M")
-
-homepage = """
-<h1>Weeeeeeein</h1>
-
-"""
-
-# Read pictures from source folder
-pics = Path(source).glob('*')
-
-with open(home, 'w') as site:
-    site.write(homepage)
-
-
-for pic in pics:
-    with open(pic, 'rb') as src:
-        img = Image(src)
-        print("----------------------------------")
-        print("Handle new picutre")
-        print("Picture Name: ", pic)
-        print("Picture Date: ", img.get('datetime'))
-
-        # Reformat exif timestamp
-        dateFormat = "%d.%m.%Y"
-        strImageDate = img.get('datetime')
-        imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
-        imageDate = datetime.strftime(imageDate, dateFormat)
-        print("Picture New Format: ", imageDate)
-        print("----------------------------------")
-
-        # Write dynamic content to site
-        with open(home, 'a') as site:
-            site.write(imageDate + '<br>')
-            #site.write("<a href=\"{0}\">{0}</a><br>".format(pic))
-
-
-
-
-print("test: ", imageDate)
-
-print("\n\nPicture Blog handle endup.")
-
 
 # HTML Header
 header = """
@@ -96,6 +55,45 @@ max-width: 50%;
 </head>
 <body>
 """
+
+homepage = """
+<h1>Weeeeeeein</h1>
+
+"""
+
+# Read pictures from source folder
+pics = Path(source).glob('*')
+
+with open(home, 'w') as site:
+    site.write(header)
+    site.write(homepage)
+
+
+for pic in pics:
+    with open(pic, 'rb') as src:
+        img = Image(src)
+        print("----------------------------------")
+        print("Handle new picutre")
+        print("Picture Name: ", pic)
+        print("Picture Date: ", img.get('datetime'))
+
+        # Reformat exif timestamp
+        dateFormat = "%d.%m.%Y"
+        strImageDate = img.get('datetime')
+        imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
+        imageDate = datetime.strftime(imageDate, dateFormat)
+        print("Picture New Format: ", imageDate)
+        print("----------------------------------")
+
+        # Write dynamic content to site
+        with open(home, 'a') as site:
+            site.write(imageDate + '<br>')
+            #site.write("<a href=\"{0}\">{0}</a><br>".format(pic))
+
+print("\n\nPicture Blog handle endup.")
+
+
+
 
 footer = "\n<body>\n</html>"
 
