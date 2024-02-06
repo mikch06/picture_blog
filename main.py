@@ -17,7 +17,7 @@ header = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ICT Wiki</title>
+    <title>🍷🍷🍷 WineBlog 🍷🍷🍷</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -57,7 +57,7 @@ max-width: 50%;
 """
 
 homepage = """
-<h1>Weeeeeeein</h1>
+<h1>🍷🍷🍷 WineBlog 🍷🍷🍷</h1>
 
 """
 
@@ -72,7 +72,6 @@ with open(home, 'w') as site:
 for pic in pics:
     with open(pic, 'rb') as src:
         img = Image(src)
-        print("----------------------------------")
         print("Handle new picutre")
         print("Picture Name: ", pic)
         print("Picture Date: ", img.get('datetime'))
@@ -92,10 +91,13 @@ for pic in pics:
 
 print("\n\nPicture Blog handle endup.")
 
+footer = "\n</body>\n</html>"
+
+with open(home, 'a') as site:
+    site.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(timestamp))
+    site.write(footer)
 
 
-
-footer = "\n<body>\n</html>"
 
 
 # Loop articles for page index
