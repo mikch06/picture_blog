@@ -13,24 +13,24 @@ now = datetime.now()
 timestamp = now.strftime("%Y-%m-%d %H:%M")
 
 homepage = """
-<h1>Weeeeeeein/h1>
+<h1>Weeeeeeein</h1>
 
 """
 
 # Read pictures from source folder
 pics = Path(source).glob('*')
 
-with open(home, 'a') as site:
+with open(home, 'w') as site:
     site.write(homepage)
 
 
 for pic in pics:
     with open(pic, 'rb') as src:
         img = Image(src)
-        print("\nHandle new picutre")
+        print("----------------------------------")
+        print("Handle new picutre")
         print("Picture Name: ", pic)
         print("Picture Date: ", img.get('datetime'))
-        print("----------------------------------")
 
         # Reformat exif timestamp
         dateFormat = "%d.%m.%Y"
@@ -38,15 +38,13 @@ for pic in pics:
         imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
         imageDate = datetime.strftime(imageDate, dateFormat)
         print("Picture New Format: ", imageDate)
+        print("----------------------------------")
 
-        # Imagename
-        # TODO: not used - remove
-        # imageName = imageDate + '.jpg'
-        # print(imageName)
+        # Write dynamic content to site
+        with open(home, 'a') as site:
+            site.write(imageDate + '<br>')
+            
 
-        with open(home, 'a') as f:
-            f.write(homepage)
-            f.write(imageName + '\n')
 
 
 print("test: ", imageDate)
@@ -99,17 +97,6 @@ max-width: 50%;
 """
 
 footer = "\n<body>\n</html>"
-
-homepage = """
-<h1>Weeeeeeein/h1>
-
-"""
-
-
-
-
-
-
 
 
 # Loop articles for page index
