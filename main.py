@@ -58,7 +58,6 @@ max-width: 50%;
 
 homepage = """
 <h1>🍷🍷🍷 WineBlog 🍷🍷🍷</h1>
-
 """
 
 # Read pictures from source folder
@@ -67,7 +66,6 @@ pics = Path(source).glob('*')
 with open(home, 'w') as site:
     site.write(header)
     site.write(homepage)
-
 
 for pic in pics:
     with open(pic, 'rb') as src:
@@ -96,20 +94,3 @@ footer = "\n</body>\n</html>"
 with open(home, 'a') as site:
     site.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(timestamp))
     site.write(footer)
-
-
-
-
-# Loop articles for page index
-# with open(home, 'w') as f:
-#     f.write(header)
-#     f.write(homepage)
-#     for pic in pics:
-#         newpage = os.path.splitext(page)[0]
-#         newpage = newpage.replace("-", " ")
-#         print("title:", newpage)
-#         f.write("<a href=\"{0}\">{1}</a><br>".format(page, newpage))
-#     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(timestamp))
-#     f.write(footer)
-
-# print("Fileconverter has finished")
