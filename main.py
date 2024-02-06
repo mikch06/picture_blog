@@ -33,19 +33,23 @@ for pic in pics:
         print("----------------------------------")
 
         # Reformat exif timestamp
-        dateFormat = "%Y-%m-%d-%M"
+        dateFormat = "%d.%m.%Y"
         strImageDate = img.get('datetime')
         imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
         imageDate = datetime.strftime(imageDate, dateFormat)
         print("Picture New Format: ", imageDate)
 
         # Imagename
-        imageName = imageDate + '.jpg'
-        print(imageName)
+        # TODO: not used - remove
+        # imageName = imageDate + '.jpg'
+        # print(imageName)
 
-        site.write(imageName + '\n')
+        with open(home, 'a') as f:
+            f.write(homepage)
+            f.write(imageName + '\n')
 
 
+print("test: ", imageDate)
 
 print("\n\nPicture Blog handle endup.")
 
