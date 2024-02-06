@@ -1,5 +1,7 @@
 /env
 __pycache__
-/pics
+/images
+index.html
+#
 /web/images
 /web/index.html
