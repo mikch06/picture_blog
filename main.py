@@ -4,9 +4,9 @@ import os
 from datetime import datetime
 
 # Filepath
-source = 'web/images'
-dest = 'web'
-home = os.path.join(dest, 'index.html')
+source = 'images'
+dest = '.'
+home = 'index.html'
 
 # Generate timestamp
 now = datetime.now()
@@ -71,7 +71,7 @@ with open(home, 'w') as site:
 for pic in pics:
     with open(pic, 'rb') as src:
         img = Image(src)
-        print("Handle new picutre")
+        print("Picture handle:")
         print("Picture Path: ", pic)
         print("Picture Date: ", img.get('datetime'))
 
@@ -85,15 +85,16 @@ for pic in pics:
 
         # Write dynamic content to site
         with open(home, 'a') as site:
-            site.write("<h3>{0}</h3><br>".format(imageDate))
-            site.write("<a href=\"{0}\">{0}</a><br>".format(img))
-            site.write("<img src=\"{0}\"><br>".format(pic))
+            site.write("<h3>{0}</h3>".format(imageDate))
+            site.write("<img src=\"{0}\" width=\"600\"><br>".format(pic))
+            site.write("<br><br>")
 
-            #  <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600"> 
+            #  Link to pic
+            # site.write("<a href=\"{0}\">{0}</a><br>".format(pic))
 
+print("\nPicture Blog handle endup.\n")
 
-print("\n\nPicture Blog handle endup.")
-
+# Footer
 footer = "\n</body>\n</html>"
 
 with open(home, 'a') as site:
