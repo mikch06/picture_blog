@@ -43,7 +43,8 @@ for pic in pics:
         # Write dynamic content to site
         with open(home, 'a') as site:
             site.write(imageDate + '<br>')
-            
+            #site.write("<a href=\"{0}\">{0}</a><br>".format(pic))
+
 
 
 
