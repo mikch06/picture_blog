@@ -58,7 +58,6 @@ max-width: 50%;
 
 homepage = """
 <h1>🍷🍷🍷 WineBlog 🍷🍷🍷</h1>
-<br>
 """
 
 # Read pictures from source folder
@@ -67,6 +66,7 @@ pics = Path(source).glob('*')
 with open(home, 'w') as site:
     site.write(header)
     site.write(homepage)
+    site.write("<div id=\"stamp\">Last generated: {}</div><br>".format(timestamp))
 
 for pic in pics:
     with open(pic, 'rb') as src:
@@ -86,6 +86,7 @@ for pic in pics:
         # Write dynamic content to site
         with open(home, 'a') as site:
             site.write("<h3>{0}</h3>".format(imageDate))
+            site.write("<a href=\"{0}\" target=\"_blank\">📷</a><br>".format(pic))
             site.write("<img src=\"{0}\" width=\"600\"><br>".format(pic))
             site.write("<br><br>")
 
@@ -98,5 +99,4 @@ print("\nPicture Blog handle endup.\n")
 footer = "\n</body>\n</html>"
 
 with open(home, 'a') as site:
-    site.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(timestamp))
     site.write(footer)
