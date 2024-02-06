@@ -58,6 +58,7 @@ max-width: 50%;
 
 homepage = """
 <h1>🍷🍷🍷 WineBlog 🍷🍷🍷</h1>
+<br>
 """
 
 # Read pictures from source folder
@@ -71,7 +72,7 @@ for pic in pics:
     with open(pic, 'rb') as src:
         img = Image(src)
         print("Handle new picutre")
-        print("Picture Name: ", pic)
+        print("Picture Path: ", pic)
         print("Picture Date: ", img.get('datetime'))
 
         # Reformat exif timestamp
@@ -84,8 +85,12 @@ for pic in pics:
 
         # Write dynamic content to site
         with open(home, 'a') as site:
-            site.write(imageDate + '<br>')
-            #site.write("<a href=\"{0}\">{0}</a><br>".format(pic))
+            site.write("<h3>{0}</h3><br>".format(imageDate))
+            site.write("<a href=\"{0}\">{0}</a><br>".format(img))
+            site.write("<img src=\"{0}\"><br>".format(pic))
+
+            #  <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600"> 
+
 
 print("\n\nPicture Blog handle endup.")
 
