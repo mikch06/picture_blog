@@ -87,13 +87,14 @@ for pic in pics:
         with open(home, 'a') as site:
             site.write("<h3>{0}</h3>".format(imageDate))
             site.write("<a href=\"{0}\" target=\"_blank\">📷</a><br>".format(pic))
-            site.write("<img src=\"{0}\" width=\"600\"><br>".format(pic))
+            site.write("<img src=\"{0}\" width=\"400\"><br>".format(pic))
             site.write("<br><br>")
 
             #  Link to pic
             # site.write("<a href=\"{0}\">{0}</a><br>".format(pic))
 
 print("\nPicture Blog handle endup.\n")
+
 
 # Footer
 footer = "\n</body>\n</html>"
