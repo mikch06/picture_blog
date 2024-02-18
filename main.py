@@ -63,6 +63,7 @@ homepage = """
 # Read pictures from source folder
 pics = Path(source).glob('*')
 
+# Write homepage
 with open(home, 'w') as site:
     site.write(header)
     site.write(homepage)
