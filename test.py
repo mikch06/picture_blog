@@ -12,23 +12,26 @@ home = 'index.html'
 now = datetime.now()
 timestamp = now.strftime("%Y-%m-%d %H:%M")
 
-pic_list = []
 
 # Read pictures from source folder
 pics = Path(source).glob('*')
 
+pic_list = []
+test_list = []
+
 for pic in pics:
+
+
+
     with open(pic, 'rb') as src:
         img = Image(src)
         # print("Picture handle:")
         # print("Picture Path: ", pic)
         # print("Picture Date: ", img.get('datetime'))
+
         pic_list = img.get('datetime')
+
         pic_list = datetime.strptime(pic_list,"%Y:%m:%d %H:%M:%S")
 
-        pic_list.sort(key=lambda date: datetime.strptime(date, "%Y:%m:%d %H:%M:%S"))
-
-
-
-
-        print(ntime)
+        # pic_list.sort(key=lambda date: datetime.strptime(pic_list, "%m-%Y"))
+        print(pic_list)
