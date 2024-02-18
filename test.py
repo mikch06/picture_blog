@@ -16,11 +16,10 @@ timestamp = now.strftime("%Y-%m-%d %H:%M")
 # Read pictures from source folder
 pics = Path(source).glob('*')
 
-pic_list = []
+foo = []
 test_list = []
 
 for pic in pics:
-
 
 
     with open(pic, 'rb') as src:
@@ -33,5 +32,10 @@ for pic in pics:
 
         pic_list = datetime.strptime(pic_list,"%Y:%m:%d %H:%M:%S")
 
-        # pic_list.sort(key=lambda date: datetime.strptime(pic_list, "%m-%Y"))
-        print(pic_list)
+        foo.append(pic_list)
+        foo.sort(reverse=True)
+
+print("foo block:")
+for i in foo:
+    print(i)
+
