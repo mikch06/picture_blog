@@ -20,8 +20,6 @@ foo = []
 test_list = []
 
 for pic in pics:
-
-
     with open(pic, 'rb') as src:
         img = Image(src)
         # print("Picture handle:")
@@ -38,4 +36,3 @@ for pic in pics:
 print("foo block:")
 for i in foo:
     print(i)
-
