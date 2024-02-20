@@ -20,7 +20,8 @@ with open(home, 'w') as site:
     site.write("<div id=\"stamp\">Last generated: {}</div><br>".format(timestamp))
 
 foo = []
-
+minilist =  []
+master_list = []
 
 for pic in pics:
     with open(pic, 'rb') as src:
@@ -33,10 +34,18 @@ for pic in pics:
         imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
         imageDate = datetime.strftime(imageDate, dateFormat)
 
-        newfoo = []
-
-        foo.append(strImageDate)
+        foo.append(imageDate)
         foo.sort(reverse=True)
+
+        minilist.append(imageDate)
+        minilist.append(pic)
+        # print("minilist: ", minilist)
+
+
+master_list.append(minilist)
+master_list.sort(reverse=True)
+print("masterlist: ", master_list)
 
 for entry in foo:
     print(entry)
+
