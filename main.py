@@ -79,15 +79,18 @@ for pic in pics:
         # Reformat exif timestamp
         dateFormat = "%d.%m.%Y"
         strImageDate = img.get('datetime')
-        imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
-        imageDate = datetime.strftime(imageDate, dateFormat)
-        print("Picture New Format: ", imageDate)
-        print("----------------------------------")
 
         foo = []
 
         foo.append(strImageDate)
         foo.sort(reverse=True)
+        
+        imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
+        imageDate = datetime.strftime(imageDate, dateFormat)
+        print("Picture New Format: ", imageDate)
+        print("----------------------------------")
+
+
 
         # Write dynamic content to site
         with open(home, 'a') as site:
