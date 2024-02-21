@@ -30,13 +30,34 @@ for pic in pics:
         # Reformat exif timestamp
         dateFormat = "%d.%m.%Y"
         strImageDate = img.get('datetime')
-        imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
-        imageDate = datetime.strftime(imageDate, dateFormat)
 
         newfoo = []
 
         foo.append(strImageDate)
         foo.sort(reverse=True)
 
-for entry in foo:
-    print(entry)
+
+
+        imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
+        imageDate = datetime.strftime(imageDate, dateFormat)
+
+
+# for entry in foo:
+#     print(entry)
+
+
+
+# Liste aller Bilddateien im Verzeichnis
+# image_files = [os.path.join(directory, file) for file in os.listdir(directory) if file.lower().endswith(('.jpg', '.jpeg', '.png'))]
+
+# Sortieren der Bilder nach Datum
+        sorted_pics = sorted(pics, key=lambda x: imageDate)
+        for pic in pics:
+
+            print(pic, imageDate)
+
+# Ausgabe der sortierten Bilder
+        # for pic in pics:
+
+
+print("finish")
