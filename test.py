@@ -27,7 +27,6 @@ for pic in pics:
         # print("Picture Date: ", img.get('datetime'))
 
         pic_list = img.get('datetime')
-
         pic_list = datetime.strptime(pic_list,"%Y:%m:%d %H:%M:%S")
 
         foo.append(pic_list)
@@ -35,4 +34,4 @@ for pic in pics:
 
 print("foo block:")
 for i in foo:
-    print(i)
+    print(i, pic)
