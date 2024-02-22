@@ -90,8 +90,6 @@ for pic in pics:
         print("Picture New Format: ", imageDate)
         print("----------------------------------")
 
-
-
         # Write dynamic content to site
         with open(home, 'a') as site:
             site.write("<h3>{0}</h3>".format(imageDate))
