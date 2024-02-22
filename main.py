@@ -79,11 +79,6 @@ for pic in pics:
         # Reformat exif timestamp
         dateFormat = "%d.%m.%Y"
         strImageDate = img.get('datetime')
-
-        foo = []
-
-        foo.append(strImageDate)
-        foo.sort(reverse=True)
         
         imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
         imageDate = datetime.strftime(imageDate, dateFormat)
