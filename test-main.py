@@ -35,7 +35,6 @@ for pic in pics:
         foo.append(imageDate)
         foo.sort(reverse=True)
 
-<<<<<<< HEAD
 
 
         imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
@@ -61,17 +60,3 @@ for pic in pics:
 
 
 print("finish")
-=======
-        minilist.append(imageDate)
-        minilist.append(pic)
-        # print("minilist: ", minilist)
-
-
-master_list.append(minilist)
-master_list.sort(reverse=True)
-print("masterlist: ", master_list)
-
-for entry in foo:
-    print(entry)
-
->>>>>>> origin/main
