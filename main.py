@@ -63,6 +63,9 @@ homepage = """
 # Read pictures from source folder
 pics = Path(source).glob('*')
 
+
+date_list = []
+
 # Write homepage
 with open(home, 'w') as site:
     site.write(header)
@@ -85,6 +88,12 @@ for pic in pics:
         print("Picture New Format: ", imageDate)
         print("----------------------------------")
 
+        pic_list = img.get('datetime')
+        pic_list = datetime.strptime(pic_list,"%Y:%m:%d %H:%M:%S")
+
+        date_list.append(pic_list)
+        date_list.sort(reverse=True)        
+
         # Write dynamic content to site
         with open(home, 'a') as site:
             site.write("<h3>{0}</h3>".format(imageDate))
@@ -95,7 +104,13 @@ for pic in pics:
             #  Link to pic
             # site.write("<a href=\"{0}\">{0}</a><br>".format(pic))
 
-print("\nPicture Blog handle endup.\n")
+print("date_list block:")
+for i in date_list:
+    with open(home, 'a') as site:
+        print(i, pic)
+        print("test")
+    # site.write("<img src=\"{0}\" width=\"400\"><br>".format(pic))
+
 
 
 # Footer
