@@ -31,6 +31,30 @@ for pic in pics:
         date_list.append(pic_list)
         date_list.sort(reverse=True)
 
-print("date_list block:")
-for i in date_list:
-    print(i, pic)
+        for pic in date_list:
+            formatiertes_datum = pic.strftime("%d.%m.%Y")
+            print(formatiertes_datum, "|", img)
+
+
+for foo in date_list:
+    formatiertes_datum = foo.strftime("%d.%m.%Y")
+    print(formatiertes_datum)
+
+
+# Datumsliste sortieren
+# daten.sort()
+
+# Formatierung und Ausgabe der sortierten Datumsliste
+# for datum in daten:
+#     formatiertes_datum = datum.strftime("%d.%m.%Y")  # Datum im gewünschten Format formatieren
+#     print(formatiertes_datum)
+
+
+# print("date_list block:")
+# for i in date_list:
+#     print(i, pic)
+
+
+
+        # imageDate = datetime.strptime(strImageDate,"%Y:%m:%d %H:%M:%S")
+        # imageDate = datetime.strftime(imageDate, dateFormat)
