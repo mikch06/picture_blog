@@ -73,11 +73,13 @@ max-width: 50%;
 }
 </style>
 </head>
-<body>
+<body class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-row">
+<div class="row g-0 text-center">
 """
 # Homepage Top
 homepage = """
 <h1>🍷🍷🍷 WineBlog 🍷🍷🍷</h1>
+
 """
 
 # Write homepage
@@ -91,13 +93,16 @@ with open(home, 'a') as site:
 
     for datum, pic in sorted_data:
             datum = datum.strftime("%d.%m.%Y")
-            site.write("<h3>{0}</h3>".format(datum))
-            site.write("<a href=\"{0}\" target=\"_blank\">📷</a><br>".format(pic))
-            site.write("<img src=\"{0}\" width=\"400\"><br>".format(pic))
-            site.write("<br><br>")
+            # site.write("<h3>{0}</h3>".format(datum))
+            # site.write("<a href=\"{0}\" target=\"_blank\">📷</a><br>".format(pic))
+            # site.write("<img src=\"{0}\" width=\"400\"><br>".format(pic))
+            # site.write("<br><br>")
+            site.write("<div class=\"col-sm-6 col-md-8\"><img src=\"{0}\" width=\"150\"></div>".format(pic))
+
+
 
 # Footer
-footer = "\n</body>\n</html>"
+footer = "</div>\n</body>\n</html>"
 
 # Write Footer
 with open(home, 'a') as site:
