@@ -15,7 +15,7 @@ timestamp = now.strftime("%Y-%m-%d %H:%M")
 # Read pictures from source folder
 pics = Path(source).glob('*')
 
-image_array = {}
+image_dict = {}
 
 for pic in pics:
     with open(pic, 'rb') as src:
@@ -27,11 +27,10 @@ for pic in pics:
         pic_list = img.get('datetime')
         pic_list = datetime.strptime(pic_list,"%Y:%m:%d %H:%M:%S")
 
-        image_array[pic_list] = pic
+        # Add entries to dictionary
+        image_dict[pic_list] = pic
 
-        sortierte_daten = sorted(image_array.items(), reverse=True)
-
-        sortiertes_dict = {}
+        sorted_data = sorted(image_dict.items(), reverse=True)
 
 # HTML Header
 header = """
@@ -90,7 +89,7 @@ with open(home, 'w') as site:
 # Write article (wine) elements
 with open(home, 'a') as site:
 
-    for datum, pic in sortierte_daten:
+    for datum, pic in sorted_data:
             datum = datum.strftime("%d.%m.%Y")
             site.write("<h3>{0}</h3>".format(datum))
             site.write("<a href=\"{0}\" target=\"_blank\">📷</a><br>".format(pic))
