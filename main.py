@@ -100,4 +100,4 @@ footer = "</div>\n</body>\n</html>"
 
 # Write Footer
 with open(home, 'a') as site:
-    site.write(footer)            
+    site.write(footer)
