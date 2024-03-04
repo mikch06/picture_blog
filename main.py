@@ -93,13 +93,8 @@ with open(home, 'a') as site:
 
     for datum, pic in sorted_data:
             datum = datum.strftime("%d.%m.%Y")
-            # site.write("<h3>{0}</h3>".format(datum))
             # site.write("<a href=\"{0}\" target=\"_blank\">📷</a><br>".format(pic))
-            # site.write("<img src=\"{0}\" width=\"400\"><br>".format(pic))
-            # site.write("<br><br>")
-            site.write("<div class=\"col-sm-6 col-md-8\"><img src=\"{0}\" width=\"150\"></div>".format(pic))
-
-
+            site.write("<div class=\"col-sm-6 col-md-4\"><h3>{0}</h3><img src=\"{1}\" width=\"400\"><br><br></div>".format(datum, pic))
 
 # Footer
 footer = "</div>\n</body>\n</html>"
