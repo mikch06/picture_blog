@@ -74,7 +74,6 @@ max-width: 50%;
 </style>
 </head>
 <body class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-row">
-<div class="row g-0 text-center">
 """
 # Homepage Top
 homepage = """
@@ -88,6 +87,7 @@ with open(home, 'w') as site:
     site.write(homepage)
     site.write("<div id=\"stamp\">Last generated: {}</div><br>".format(timestamp))
     site.write("Click for bigger images!<br><br>")
+    site.write("<div class=\"row g-0 text-center\">")
 
 # Write article (wine) elements
 with open(home, 'a') as site:
