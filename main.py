@@ -10,7 +10,7 @@ home = 'index.html'
 
 # Generate timestamp
 now = datetime.now()
-timestamp = now.strftime("%Y-%m-%d %H:%M")
+timestamp = now.strftime("%d.%m.%Y %H:%M")
 
 # Read pictures from source folder
 pics = Path(source).glob('*')
