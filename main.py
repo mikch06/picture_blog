@@ -47,16 +47,6 @@ background-color: #ddd;
 margin: 10px;
 }
 
-pre {
-  display: block;
-  color: white;
-  background-color: black;
-  max-width: 800px;
-  min-width: 100px;
-  padding: 10px;
-  border-radius: 5px;
-}
-
 h1  {
 font-size: 26px;
 }
@@ -68,9 +58,7 @@ text-decoration: none;
 font-size: 10px;
 }
 
-#search {
-max-width: 50%;
-}
+
 </style>
 </head>
 <body class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-row">
