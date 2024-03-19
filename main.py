@@ -20,7 +20,7 @@ image_dict = {}
 for pic in pics:
     with open(pic, 'rb') as src:
         img = Image(src)
-        print("Picture handle:")
+        print("-")
         print("Picture Path: ", pic)
         print("Picture Date: ", img.get('datetime'))
 
