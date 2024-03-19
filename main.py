@@ -58,7 +58,10 @@ text-decoration: none;
 font-size: 10px;
 }
 
-
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
 </style>
 </head>
 <body class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-row">
