@@ -66,10 +66,10 @@ font-size: 10px;
 </head>
 <body class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-row">
 """
+
 # Homepage Top
 homepage = """
 <h1>🍷🍷🍷 WineBlog 🍷🍷🍷</h1>
-
 """
 
 # Write homepage
