@@ -1,6 +1,7 @@
 venv
 __pycache__
 /images
+images.bak
 index.html
 #
 /web/images
