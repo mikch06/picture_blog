@@ -8,7 +8,9 @@ clear
 
 if [ -z $1]
 then
-    echo 'Exit --> Use user and hostname as $1 and $2'
+    echo ' >>> Exit'
+    echo ''
+    echo '     ---> Use user and hostname as $1 and $2'
     echo ''
     echo ''
     exit
@@ -27,6 +29,14 @@ remote_dir='/home/mikcyons/www/wein'
 echo "Sync from remote directory"
 rsync -aPu  $1@$2:$remote_dir/images/* images
 
+# Convert image size
+echo "Convert images to right size"
+for i in images/*
+do 
+  convert -verbose $i -resize 1200x $i
+done
+
+# Run blog creator
 python3 main.py
 
 # Up sync all to remote host
