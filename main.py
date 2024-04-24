@@ -59,7 +59,7 @@ font-size: 10px;
 }
 
 .responsive {
-  max-width: 400px;
+  max-width: 500px;
   height: auto;
 }
 </style>
