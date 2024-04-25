@@ -59,6 +59,7 @@ font-size: 10px;
 }
 
 .responsive {
+  width: 100%;
   max-width: 500px;
   height: auto;
 }
