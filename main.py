@@ -37,7 +37,7 @@ header = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>🍷WineBlog 🍷</title>
+    <title>🍷WineBlog🍷</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -70,7 +70,7 @@ font-size: 10px;
 
 # Homepage Top
 homepage = """
-<h1>🍷🍷🍷 WineBlog 🍷🍷🍷</h1>
+<h1>🍷WineBlog 🍷</h1>
 """
 
 # Write homepage
@@ -79,6 +79,7 @@ with open(home, 'w') as site:
     site.write(homepage)
     site.write("<div id=\"stamp\">Last generated: {}</div><br>".format(timestamp))
     site.write("Click for bigger images!<br><br>")
+    site.write("<button type=\"button\" class=\"btn btn-secondary\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"This page is not just to show up wines - but rather to improve python programming skills with a page generator and image handler.\">Info</button>")
     site.write("<div class=\"row g-0 text-center\">")
 
 # Write article (wine) elements
