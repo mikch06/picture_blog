@@ -63,6 +63,12 @@ font-size: 10px;
   max-width: 500px;
   height: auto;
 }
+
+.card-body  {
+    background-color: black;
+    color: white;
+    width: 50%;
+}
 </style>
 </head>
 <body class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-row">
@@ -73,13 +79,25 @@ homepage = """
 <h1>🍷WineBlog 🍷</h1>
 """
 
+collapse = """
+  <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Info
+  </button>
+  <br><br>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    This page is not just to show up wines - but rather to improve python programming skills with a page generator and image handler.
+  </div>
+</div>
+"""
+
 # Write homepage
 with open(home, 'w') as site:
     site.write(header)
     site.write(homepage)
     site.write("<div id=\"stamp\">Last generated: {}</div><br>".format(timestamp))
     site.write("Click for bigger images!<br><br>")
-    site.write("<button type=\"button\" class=\"btn btn-secondary\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"This page is not just to show up wines - but rather to improve python programming skills with a page generator and image handler.\">Info</button>")
+    site.write(collapse)
     site.write("<div class=\"row g-0 text-center\">")
 
 # Write article (wine) elements
@@ -90,7 +108,11 @@ with open(home, 'a') as site:
             site.write("<div class=\"col-sm-6 col-md-4\"><h3>{0}</h3><a href=\"{1}\" target=\"_blank\"><img src=\"{1}\" class=\"responsive\"></a><br><br></div>".format(datum, pic))
 
 # Footer
-footer = "</div>\n</body>\n</html>"
+# footer = "</div>\n    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></body>\n</html>"
+footer = """
+</div>\n<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>\n</body>\n</html>
+"""
+
 
 # Write Footer
 with open(home, 'a') as site:
