@@ -37,7 +37,7 @@ header = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>🍷WineBlog🍷</title>
+    <title>🍷 WineBlog 🍷</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -76,7 +76,7 @@ font-size: 10px;
 
 # Homepage Top
 homepage = """
-<h1>🍷WineBlog 🍷</h1>
+<h1>🍷 WineBlog 🍷</h1>
 """
 
 collapse = """
@@ -108,7 +108,6 @@ with open(home, 'a') as site:
             site.write("<div class=\"col-sm-6 col-md-4\"><h3>{0}</h3><a href=\"{1}\" target=\"_blank\"><img src=\"{1}\" class=\"responsive\"></a><br><br></div>".format(datum, pic))
 
 # Footer
-# footer = "</div>\n    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></body>\n</html>"
 footer = """
 </div>\n<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>\n</body>\n</html>
 """
